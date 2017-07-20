@@ -7,14 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d9ee15a-27d1-4a3b-9551-d9b856c717bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/zzy/filelist/files/FileSelector.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FileList/com/zzy/filelist/FilesListServlet.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/FileList_war_exploded/WEB-INF/classes/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/artifacts/FileList_war_exploded/WEB-INF/classes/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/FileList_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/FileList_war_exploded/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FileList/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/FileList/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/zzy/filelist/files/FilesListServlet.java" afterPath="$PROJECT_DIR$/src/com/zzy/filelist/files/FilesListServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -127,6 +120,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="932755233" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="FileList" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -716,12 +714,20 @@
       <workItem from="1500538375484" duration="127000" />
       <workItem from="1500547993068" duration="21000" />
       <workItem from="1500548049690" duration="83000" />
-      <workItem from="1500548279742" duration="360000" />
+      <workItem from="1500548279742" duration="506000" />
     </task>
+    <task id="LOCAL-00001" summary="这是上传到什么地方去？">
+      <created>1500548686244</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1500548686244</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19400000" />
+    <option name="totallyTimeSpent" value="19546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
@@ -766,6 +772,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="这是上传到什么地方去？" />
+    <option name="LAST_COMMIT_MESSAGE" value="这是上传到什么地方去？" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
