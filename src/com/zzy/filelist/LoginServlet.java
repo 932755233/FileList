@@ -1,14 +1,10 @@
 package com.zzy.filelist;
 
-import com.sun.deploy.uitoolkit.impl.text.TextUIToolkit;
-
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.swing.text.Utilities;
 import java.io.IOException;
 
 /**
@@ -20,7 +16,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if ("zzy".equals(username) && "123".equals(password)) {
-            response.sendRedirect("/filelist.jsp");
+            response.sendRedirect("/fileslist");
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
             session.setAttribute("password", password);

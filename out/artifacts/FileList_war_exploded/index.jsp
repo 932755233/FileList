@@ -21,7 +21,7 @@ To change this template use File | Settings | File Templates.
     </style>
 </head>
 <body style="background-color: #FFA500">
-<form action="/Login" method="get">
+<form action="/login" method="get">
     <div style="text-align: center">
         <h1 style="color: #EEEEEE">登录</h1>
         <div class="div">
@@ -39,6 +39,9 @@ To change this template use File | Settings | File Templates.
         </div>
         <br>
         <input type="submit" value="登录" style="color: #FFA500;background-color: cadetblue;width: 100px"/>
+        <br/>
+        <img src="localhost:8081\Users\周忠煜\Desktop\wenjian.jpg" />
+
     </div>
 </form>
 </body>

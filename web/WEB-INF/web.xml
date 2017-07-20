@@ -9,7 +9,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>FilesListServlet</servlet-name>
-        <url-pattern>/FilesList</url-pattern>
+        <url-pattern>/fileslist</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -18,7 +18,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/Login</url-pattern>
+        <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
 
