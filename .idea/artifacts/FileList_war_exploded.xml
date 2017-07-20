@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="FileList:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/FileList_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="FileList/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="FileList" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
