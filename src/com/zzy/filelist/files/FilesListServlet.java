@@ -30,7 +30,8 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
 
         System.out.println(session.getAttribute("username"));
 
-        File file = new File("/home/zzy");
+        File file = new File("/Users/zzy");
+        writer.print("<br>");
         String absolutePath = file.getAbsolutePath();
         writer.println("absolutePath=" + absolutePath);
         writer.print("<br>");

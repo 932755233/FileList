@@ -5,7 +5,7 @@
          version="3.1">
     <servlet>
         <servlet-name>FilesListServlet</servlet-name>
-        <servlet-class>com.zzy.filelist.FilesListServlet</servlet-class>
+        <servlet-class>com.zzy.filelist.files.FilesListServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>FilesListServlet</servlet-name>
