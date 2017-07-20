@@ -38,7 +38,7 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
 
 
 //        String[] list = file.list();
-        File[] files = file.listFiles();
+        File[] files = file.listFiles(new FileSelector());
 
         for (int i = 0; i < files.length; i++) {
             writer.print(files[i].getPath());
