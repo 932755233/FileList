@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <servlet>
-        <servlet-name>FileListServlet</servlet-name>
-        <servlet-class>com.zzy.filelist.FileListServlet</servlet-class>
+        <servlet-name>FilesListServlet</servlet-name>
+        <servlet-class>com.zzy.filelist.files.FilesListServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>FileListServlet</servlet-name>
-        <url-pattern>/FileList</url-pattern>
+        <servlet-name>FilesListServlet</servlet-name>
+        <url-pattern>/FilesList</url-pattern>
     </servlet-mapping>
 
     <servlet>

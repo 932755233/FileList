@@ -1,8 +1,9 @@
-package com.zzy.filelist;
+package com.zzy.filelist.files;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +11,7 @@ import java.io.PrintWriter;
 /**
  * Created by zzy on 2017/7/19.
  */
-public class FileListServlet extends javax.servlet.http.HttpServlet {
+public class FilesListServlet extends javax.servlet.http.HttpServlet {
 
     public void init() throws ServletException {
         super.init();
@@ -21,15 +22,13 @@ public class FileListServlet extends javax.servlet.http.HttpServlet {
         response.setContentType("text/html;charset=utf-8");
 
         PrintWriter writer = response.getWriter();
-        writer.println("你好");
-        writer.println("<br>");
 
-        String zhou = request.getParameter("zhou");
+        HttpSession session = request.getSession();
 
-        writer.println(zhou);
+        writer.println("你好" + session.getAttribute("username"));
         writer.print("<br>");
 
-        System.out.println(zhou);
+        System.out.println(session.getAttribute("username"));
 
         File file = new File("/home/zzy");
         String absolutePath = file.getAbsolutePath();
@@ -44,7 +43,6 @@ public class FileListServlet extends javax.servlet.http.HttpServlet {
             writer.print(files[i].getPath());
             writer.print("<br>");
         }
-
 
 
     }

@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.swing.text.Utilities;
 import java.io.IOException;
 
@@ -20,6 +21,9 @@ public class LoginServlet extends HttpServlet {
 
         if ("zzy".equals(username) && "123".equals(password)) {
             response.sendRedirect("/filelist.jsp");
+            HttpSession session = request.getSession();
+            session.setAttribute("username", username);
+            session.setAttribute("password", password);
         } else {
             response.sendRedirect("https://www.baidu.com");
         }
