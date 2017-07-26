@@ -19,7 +19,7 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
     private List<String> pathList;
     String[] strs = {"jpg", "gif", "png"};
     String fileUrl = "http://221.222.186.145:5002";
-    String testUrl = "http://localhost:8081";
+    String testUrl = "http://192.168.1.10:8081";
 
     String filePath = "/home/zzy";
 
