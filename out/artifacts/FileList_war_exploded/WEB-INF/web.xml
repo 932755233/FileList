@@ -21,6 +21,15 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>FileUploadServlet</servlet-name>
+        <servlet-class>com.zzy.filelist.files.FileUploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileUploadServlet</servlet-name>
+        <url-pattern>/fileupload</url-pattern>
+    </servlet-mapping>
+
 
     <filter>
         <filter-name>StringFilter</filter-name>

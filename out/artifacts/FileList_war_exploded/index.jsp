@@ -31,8 +31,6 @@ To change this template use File | Settings | File Templates.
 
             <br>
             <span style="color: #EEEEEE;">
-
-
                 密码:</span>
             <input class="text" type="password" name="password" required/>
             <br>

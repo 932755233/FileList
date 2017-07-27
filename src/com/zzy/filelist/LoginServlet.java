@@ -15,15 +15,20 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+        HttpSession session = request.getSession();
+
+
         if ("zzy".equals(username) && "123".equals(password)) {
             response.sendRedirect("/fileslist");
-            HttpSession session = request.getSession();
-            session.setAttribute("username", username);
-            session.setAttribute("password", password);
+
+        } else if ("zzy1".equals(username) && "123".equals(password)) {
+            response.sendRedirect("/file/fileupload.jsp");
         } else {
             response.sendRedirect("https://www.baidu.com");
-        }
 
+        }
+        session.setAttribute("username", username);
+        session.setAttribute("password", password);
 
     }
 
