@@ -18,10 +18,15 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
 
     private List<String> pathList;
     String[] strs = {"jpg", "gif", "png"};
-    String fileUrl = "http://221.222.186.145:5002";
-    String testUrl = "http://192.168.1.10:8081";
+    String fileUrl = "http://221.222.213.162:5001/Pictures";
+    String testUrl = "http://localhost:8080/Pictures";
 
-    String filePath = "/home/zzy";
+
+    String macPath = "/Users/zzy/image";
+    String linuxPath = "/home/zzy/image";
+
+
+    String filePath = "/home/zzy/image/";
 
     private int index = 0;
     private int size = 10;
@@ -29,10 +34,16 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
     public void init() throws ServletException {
         super.init();
         pathList = new ArrayList<String>();
-        System.out.println("init");
 
-        File file = new File(filePath);
-        getPath(file);
+        String osName = System.getProperty("os.name");
+        System.out.println("init---"+osName);
+
+        if (osName.contains("Mac")) {
+            filePath = macPath;
+        } else if (osName.contains("Linux")) {
+            filePath = linuxPath;
+        }
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,6 +57,9 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
         writer.print("<br>");
 
         System.out.println(type);
+
+        File file = new File(filePath);
+        getPath(file);
 
 //        File file = new File("H:\\函数解析");
         writer.print("<style>" +
@@ -67,6 +81,7 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
             index++;
             if (index >= pathList.size()) {
                 index = 0;
+                break;
             }
         }
 
@@ -100,6 +115,7 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
         System.out.println(file.getAbsolutePath() + "zzy");
         if (file.exists()) {
             File[] files = file.listFiles(new FileSelector());
+            System.out.println(files.length);
             if (files.length == 0) {
                 return;
             } else {
@@ -114,6 +130,7 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
                             if (list.contains(split[split.length - 1])) {
                                 String absolutePath = file1.getAbsolutePath();
                                 String imgUrl = absolutePath.replace(filePath, "");
+                                System.out.println(imgUrl);
                                 pathList.add(imgUrl);
                             }
                         }

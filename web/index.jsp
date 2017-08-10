@@ -20,14 +20,14 @@ To change this template use File | Settings | File Templates.
 
     </style>
 </head>
-<body style="background-color: #FFA500">
-<form action="/login" method="get">
+<body style="background-color: #32ad52">
+<form action="/login" method="post">
     <div style="text-align: center">
         <h1 style="color: #EEEEEE">登录</h1>
         <div class="div">
             <span style="color: #EEEEEE;">
                 用户名:</span>
-            <input class="text" type="text" name="username" required/>
+            <input class="text" name="username" required/>
 
             <br>
             <span style="color: #EEEEEE;">

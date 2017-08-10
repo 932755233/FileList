@@ -21,7 +21,10 @@ public class LoginServlet extends HttpServlet {
         if ("zzy".equals(username) && "123".equals(password)) {
             response.sendRedirect("/fileslist");
 
-        } else if ("zzy1".equals(username) && "123".equals(password)) {
+        } else if ("zzy2".equals(username) && "123".equals(password)) {
+            response.sendRedirect("/fileslist?type=0");
+
+        } else  if ("zzy1".equals(username) && "123".equals(password)) {
             response.sendRedirect("/file/fileupload.jsp");
         } else {
             response.sendRedirect("https://www.baidu.com");
