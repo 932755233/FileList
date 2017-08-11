@@ -18,7 +18,8 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
 
     private List<String> pathList;
     String[] strs = {"jpg", "gif", "png"};
-    String fileUrl = "http://221.222.213.162:5001/Pictures";
+    //    String fileUrl = "http://221.222.213.162:5001/Pictures";
+    String fileUrl = "http://localhost:9090/Pictures";
     String testUrl = "http://localhost:8080/Pictures";
 
 
@@ -36,7 +37,7 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
         pathList = new ArrayList<String>();
 
         String osName = System.getProperty("os.name");
-        System.out.println("init---"+osName);
+        System.out.println("init---" + osName);
 
         if (osName.contains("Mac")) {
             filePath = macPath;
@@ -59,9 +60,10 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
         System.out.println(type);
 
         File file = new File(filePath);
+        pathList.clear();
         getPath(file);
 
-//        File file = new File("H:\\函数解析");
+//        File file = new File("H:\\函数解析")
         writer.print("<style>" +
                 ".thumbnail" +
                 "{" +
@@ -75,8 +77,7 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
             } else {
                 str = fileUrl + str;
             }
-            writer.print(" <img class=\"thumbnail\" src=\"" + str + "\" />");
-            writer.print("<br />");
+            writer.print(" <img style=\"width: 100px; height:100px\" class=\"thumbnail\" src=\"" + str + "\" />");
             System.out.println("index:" + index + "-----" + str);
             index++;
             if (index >= pathList.size()) {

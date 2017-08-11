@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="login.js" type="text/jscript"></script>
+   <link href="login.css" rel="stylesheet" type="text/css"/>
     <meta charset="UTF-8">
     <title>起飞</title>
+  	<style>
+		.div_login{
+			background-color:aquamarine;
+		}
+	
+	</style>
 </head>
 <body>
-
+<div style="background-color: #FFFFCC;color: #000000;padding:1px">
+  <h1 align="center"><marquee>主页</marquee></h1>
+</div>
+<form method="get" action="/login">
+<div class="div_login" align="center">
+ <span>用户名</span>
+ <input type="text" name="username" />
+ <br>
+ <span>密码</span>
+ <input type="password" name="password"/>
+ <br>
+ <input style="width: 10em;margin-top: 2em" type="submit" value="确定"/>
+	
+</div>
+</form>
 </body>
 </html>
