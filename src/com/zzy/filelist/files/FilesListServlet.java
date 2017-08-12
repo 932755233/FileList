@@ -19,14 +19,17 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
     private List<String> pathList;
     String[] strs = {"jpg", "gif", "png"};
     //    String fileUrl = "http://221.222.213.162:5001/Pictures";
-    String fileUrl = "http://localhost:9090/Pictures";
-    String testUrl = "http://localhost:8080/Pictures";
+    String fileUrl = "http://114.245.88.60:5003/Pictures";
+    String testUrl = "http://localhost:9090/Pictures";
+    String windowsTestUrl = "http://localhost:8080/Pictures";
 
 
     String macPath = "/Users/zzy/image";
     String linuxPath = "/home/zzy/image";
+    String windowsPath = "H:\\BaiduNetdiskDownload\\2016-02-08在家\\没少女战士\\没少女战士\\我是美少女战士JK酱 蓝";
 
 
+    String url = "";
     String filePath = "/home/zzy/image/";
 
     private int index = 0;
@@ -43,6 +46,9 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
             filePath = macPath;
         } else if (osName.contains("Linux")) {
             filePath = linuxPath;
+        } else if (osName.contains("Windows")) {
+            testUrl = windowsTestUrl;
+            filePath = windowsPath;
         }
 
     }
@@ -54,8 +60,14 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
         PrintWriter writer = response.getWriter();
 
         HttpSession session = request.getSession();
+        Object is_login = session.getAttribute("is_login");
+        if (is_login == null) {
+            writer.print("<h1 align=\"center\">请返回重新登录</h1>");
+            return;
+        }
         String type = request.getParameter("type");
         writer.print("<br>");
+        writer.print("<script src=\"/filelist.js\" type=\"text/jscript\"></script>");
 
         System.out.println(type);
 
@@ -64,12 +76,13 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
         getPath(file);
 
 //        File file = new File("H:\\函数解析")
-        writer.print("<style>" +
-                ".thumbnail" +
-                "{" +
-                "float:left;" +
-                "}" +
-                "</style>");
+        writer.print("<div>");
+//        writer.print("<style>" +
+//                ".thumbnail" +
+//                "{" +
+//                "float:left;" +
+//                "}" +
+//                "</style>");
         for (int i = 0; i < size; i++) {
             String str = pathList.get(index);
             if ("0".equals(type)) {
@@ -77,7 +90,7 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
             } else {
                 str = fileUrl + str;
             }
-            writer.print(" <img style=\"width: 100px; height:100px\" class=\"thumbnail\" src=\"" + str + "\" />");
+            writer.print(" <a onmouseout=\"hoverHiddendiv(this)\" onmousemove=\"hoverShowDiv(this)\"  target=\"_blank\" class=\"thumbnail\" href=\"" + str + "\"><img id=\"smallimg\" style=\"width: 100px; height:100px\" src=\"" + str + "\" /></a>");
             System.out.println("index:" + index + "-----" + str);
             index++;
             if (index >= pathList.size()) {
@@ -86,6 +99,10 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
             }
         }
 
+
+        writer.print("</div>");
+        writer.println("<br/>");
+        writer.print("<button style=\"width:10em;height:5em;\" onclick=\"javascript:location.reload(true);\">下一页</button>");
 
 //        writer.print("<br />");
 //        String absolutePath = file.getAbsolutePath();
@@ -100,7 +117,15 @@ public class FilesListServlet extends javax.servlet.http.HttpServlet {
 //            writer.print(files[i].getName());
 //            writer.print("<br />");
 //        }
+        writer.print("<div style=\"border:1px solide #aaccff;display:none;\" id=\"divHover\" >");
+        writer.print("<img src=\"\"id=\"bigimg\" />");
+        writer.print("</div>");
 
+
+
+        System.out.println(request.getHeader("x-forwarded-for"));
+        System.out.println(request.getHeader("X-Real-IP"));
+        System.out.println(request.getRemoteAddr());
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
